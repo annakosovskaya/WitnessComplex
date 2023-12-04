@@ -301,6 +301,14 @@ class WitnessComplex():
             plt.show()
         plt.close()
 
+    def diagram_vals(self, show=False, path_to_save=None):
+        assert self.simplex_tree_computed
+        fig, ax = plt.subplots()
+
+        diag = self.simplex_tree.persistence()
+        gudhi.plot_persistence_diagram(diag, axes=ax, legend=True)
+    return diag
+
     def check_distance_matrix(self):
         assert self.metric_computed
         return not np.any(self.landmarks_dist == MAX_DIST_INIT)

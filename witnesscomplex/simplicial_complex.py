@@ -307,7 +307,7 @@ class WitnessComplex():
 
         diag = self.simplex_tree.persistence()
         gudhi.plot_persistence_diagram(diag, axes=ax, legend=True)
-    return diag
+        return diag
 
     def check_distance_matrix(self):
         assert self.metric_computed
